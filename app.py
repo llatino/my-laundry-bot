@@ -54,9 +54,9 @@ def handle_message(event):
         row_data = sheet.row_values(cell.row)
         
         # สมมติลำดับคอลัมน์: A=ID, B=ชื่อเล่น, C=ชื่อจริง, D=สถานะ, E=ราคา
-        name = row_data[2]    # คอลัมน์ C
-        status = row_data[3]  # คอลัมน์ D
-        price = row_data[4]   # คอลัมน์ E
+        name = row_data[2] if len(row_data) > 2 else "ลูกค้า"
+        status = row_data[3] if len(row_data) > 3 else "ไม่มีข้อมูล"
+        price = row_data[4] if len(row_data) > 4 else "0"
         
         if "สถานะ" in user_text:
             reply_text = f"สวัสดีครับคุณ {name} ✨\nขณะนี้ผ้าของคุณ: {status}"
@@ -81,3 +81,4 @@ def handle_message(event):
 
 if __name__ == "__main__":
     app.run(port=int(os.environ.get("PORT", 5000)))
+
