@@ -28,7 +28,7 @@ def get_sheet():
     creds = ServiceAccountCredentials.from_json_keyfile_name("google_key.json", scope)
     client = gspread.authorize(creds)
     # เปลี่ยนชื่อ "Laundry_DB" ให้ตรงกับชื่อไฟล์ Google Sheets ของคุณเป๊ะๆ
-    return client.open("Laundry_DB").sheet1
+    return client.open("laundry-bot").sheet1
 
 @app.route("/callback", methods=['POST'])
 def callback():
