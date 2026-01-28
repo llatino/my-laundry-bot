@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "neural-cirrus-328415",
+  "private_key_id": "f255ceef68f869efe89d787d91f5e8c92cf641f3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDYpaC51IuqOhRW\noHQ7X67PYynyLELOfilhG5IMaVGzJ3jOJLICXLhwvt7XFBS9nvRlg5wJXuvFDqB5\n/om688AEvMgExlGptPaq0r5zJwz7OAx/kl4tGisvHbwPyu3YYu24AZUWk1FwV4m3\nsqntwOL4oG/SrhrR0CMvO4Y/gSruV3oBUcA6oaUIHagV0Y3Hrbryi6wRFSL9z8eS\nRwxbkZ1VE8G5pQK3eoimSlNmF1m4X+YZHS7MzzTl/hJZww6i3CQI+ae/pH9wzkRc\nw0Q00Yepk0ji/anS3+aczYFRn+VXEvP+OzQ9ycJPhzQd64KiooP/jJ6tQg1rjk3o\nOrm6dI/vAgMBAAECggEABzzlVUAGGH5PPqOmrnMgZnpUJOyYoMhzPnTK2NJN8fPQ\nI+by8YRCfzXJQRtBJCKi3J9cf62lp9Q4xUqdNFs/X4klD4/Gm6pZkVRwG23DD8OM\nG1j6/3u/1JekOEzZzGBlu7+FyRbL4jpydeoopjJLAu5tPfcmGzteaY4OCqIYmpTO\n2CzDuAoCrXWlGLFFoxtt5oyEPQcVrKJ9Kcn3eti7BLcQTDZbLyQTQiIOGeAbZJ2g\nAUwOSKscoszVE4C8nc4A2p64fTFoqlClqClskA1LVnJMyg+wMxi3jv6+yPkMjuJg\ni10SB1VY2h7hlneRGlyc5fsnmR5ooLf4OVw94LEzCQKBgQDvoGDbXiJQ+WKqpVBF\nBEjXEJfacmiNdHFFaGf1s3hhh/iLS0gVCEdDSjVR6A8yMPKo8VzmfFipuJQ8wfWE\nVCMQa+Eze4OwNkK2E9PATXLrtMfcSPph8P5YSqtTw3hgZhjYWQQp0O5u5uJG4iQr\n0MOv/efxgF5zb2AggX5IsnvVdwKBgQDnc0jyzEbjaDI+WZqPKgsm4ZyA0l/NKmjh\nMDp9ZOcIEdi9vFTucdgzY0tnzpEJzguYXQB2h9ZxOyfJvqSLlruSZpnuon7ysDC2\nAI03YaC9xuMDzCzB6k8m4PnslG3YFJZS3Ns2G1GDDuEs6kQlE/biM5AH0O3rlN5i\nj+WC/IEXSQKBgQCAj6IHb5ynpvTZqvHC5YaS5BMknwcbBWMUIuzLtKscYI/nY89b\ngWKCZpjuxbsJaZt3Km92NTZ4cFAPvNwVT/K0B7z+GwFPE/18pGySGrtSXF5yADFd\nRKehBQagXRoDViN0R2XlbXPOyk6SSxeu7kVe8bF0LzP9aL7BEdiH9kJcBwKBgQCe\ngVNKBB/gCTGvhYnV1cNBY2zcxDYbuZmN7ot/6KRX4HEAr4OysICR4MR5WPv3LQa/\n16FDi4+OiCadgVQKzLW0c1OkG+C4r3UMj6Amd1Ov5A8AQMm+G4sNYzGFlbkMLD0u\njlYJ3feau4v2SJFWmy+OhiVzVOA7X/5UnZteczKtEQKBgDNhC8lBo5wUNETcw51o\npipb+tlg+nQyOWqwoeHUP37N3OZJ9fyEt+BdP55na5fzb4cMZKlXN93CCKah+h8p\nLHLK37WL3rWhPwxuSfyVJ3ESwgHPPoeWbG4sayc+OXewMgYNoFpvMS5LMoSBZRAr\nl1cDREEzTnO5lrzGHODI3seh\n-----END PRIVATE KEY-----\n",
+  "client_email": "laundry-bot@neural-cirrus-328415.iam.gserviceaccount.com",
+  "client_id": "110495533173313601391",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/laundry-bot%40neural-cirrus-328415.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
