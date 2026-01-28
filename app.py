@@ -24,12 +24,24 @@ handler = WebhookHandler(line_channel_secret)
 def get_sheet():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        # กลับมาใช้การอ่านจากไฟล์ google_key.json ที่เราเพิ่งแก้ไป
-        creds = ServiceAccountCredentials.from_json_keyfile_name("google_key.json", scope)
+        
+        # ดึง JSON string จาก Render Environment
+        json_key = os.getenv("GOOGLE_JSON_KEY")
+        if not json_key:
+            return "ERROR: ไม่พบ GOOGLE_JSON_KEY ใน Render"
+            
+        # แปลงข้อความกลับเป็น Dictionary
+        info = json.loads(json_key)
+        
+        # จัดการเรื่องตัวขึ้นบรรทัดใหม่ใน Private Key ให้ถูกต้อง
+        if 'private_key' in info:
+            info['private_key'] = info['private_key'].replace('\\n', '\n')
+            
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(info, scope)
         client = gspread.authorize(creds)
         return client.open("laundry-bot").sheet1
     except Exception as e:
-        return f"ERROR_JSON_FILE: {str(e)}"
+        return f"ERROR_AUTH: {str(e)}"
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -89,6 +101,7 @@ def handle_message(event):
 
 if __name__ == "__main__":
     app.run(port=int(os.environ.get("PORT", 5000)))
+
 
 
 
