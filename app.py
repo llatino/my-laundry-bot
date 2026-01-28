@@ -25,13 +25,18 @@ def get_sheet():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
         
-        # ดึงค่าจาก Environment Variables ที่เราตั้งไว้ใน Render
-        # วิธีนี้จะไม่มีปัญหาเรื่อง Invalid \escape จากไฟล์ JSON ครับ
+        # ดึงค่าจาก Render
+        raw_key = os.getenv("GOOGLE_PRIVATE_KEY")
+        
+        # เช็คก่อนว่าดึงค่ามาได้ไหม ถ้าไม่ได้ให้บอกสาเหตุตรงๆ
+        if not raw_key:
+            return "ERROR_AUTH: หา GOOGLE_PRIVATE_KEY ใน Render ไม่เจอ (เช็คตัวสะกดใน Environment ด้วยครับ)"
+        
         info = {
             "type": "service_account",
             "project_id": "neural-cirrus-328415",
             "private_key_id": "8e2190b3cdabbb2e076520724d99dd270a5b7986",
-            "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),
+            "private_key": raw_key.replace('\\n', '\n'),
             "client_email": "laundry-bot@neural-cirrus-328415.iam.gserviceaccount.com",
             "client_id": "110495533173313601391",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -104,4 +109,5 @@ def handle_message(event):
 
 if __name__ == "__main__":
     app.run(port=int(os.environ.get("PORT", 5000)))
+
 
