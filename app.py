@@ -10,6 +10,7 @@ from linebot.v3.messaging import (
     ReplyMessageRequest, TextMessage
 )
 from linebot.v3.webhooks import MessageEvent, TextMessageContent
+import json
 
 app = Flask(__name__)
 
@@ -25,7 +26,9 @@ handler = WebhookHandler(line_channel_secret)
 def get_sheet():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     # ไฟล์ google_key.json ต้องอัปโหลดขึ้น GitHub ไว้ที่โฟลเดอร์หลัก
-    creds = ServiceAccountCredentials.from_json_keyfile_name("google_key.json", scope)
+    google_key_json = os.getenv('GOOGLE_JSON_KEY')
+    key_dict = json.loads(google_key_json)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, scope)
     client = gspread.authorize(creds)
     # เปลี่ยนชื่อ "Laundry_DB" ให้ตรงกับชื่อไฟล์ Google Sheets ของคุณเป๊ะๆ
     return client.open("laundry-bot").sheet1
@@ -81,4 +84,5 @@ def handle_message(event):
 
 if __name__ == "__main__":
     app.run(port=int(os.environ.get("PORT", 5000)))
+
 
