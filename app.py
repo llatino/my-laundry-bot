@@ -17,7 +17,8 @@ app = Flask(__name__)
 # 1. ตั้งค่า LINE API (ดึงค่าจากที่ตั้งไว้ใน Render)
 # ต้องตั้งชื่อ NAME ใน Render ให้ตรงกับ os.getenv นะครับ
 line_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN')
-line_channel_secret = os.getenv('LINE_CHANNEL_SECRET')
+if not line_access_token:
+    print("Error: LINE_CHANNEL_ACCESS_TOKEN is not set")
 
 configuration = Configuration(access_token=line_access_token)
 handler = WebhookHandler(line_channel_secret)
@@ -84,5 +85,6 @@ def handle_message(event):
 
 if __name__ == "__main__":
     app.run(port=int(os.environ.get("PORT", 5000)))
+
 
 
